@@ -2,7 +2,7 @@ import React, { useState, useEffect, useGlobal } from "reactn";
 import { Redirect } from "react-router-dom";
 import client from "../api/client";
 
-const TweetForm = (props) => {
+const TweetForm = () => {
     const [formState, setFormState] = useState({
         body: ""
     })

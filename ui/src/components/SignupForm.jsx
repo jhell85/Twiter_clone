@@ -10,9 +10,7 @@ const SignupForm = (props) => {
     passwordConfirm: ""
   }
   const [formState, setFormState] = useState(intiialState);
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const { 1: setToken } = useGlobal("token");
+  
 
   const handleChange = e => {
     setFormState({
@@ -24,7 +22,7 @@ const SignupForm = (props) => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    const { data } = await client.post(
+    await client.post(
       "/auth/sign-up",
       setFormState(intiialState)
     );

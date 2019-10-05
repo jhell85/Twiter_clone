@@ -22,6 +22,12 @@ const userSchema = Schema({
     virtuals: true,
   }
 });
+userSchema.virtual("tweets",{
+  localField:"_id",
+  foreignField: "user",
+  ref: "Tweet",
+  justOne: false,
+});
 
 userSchema.statics.signUp = async function(email, password) {
   const user = new this();

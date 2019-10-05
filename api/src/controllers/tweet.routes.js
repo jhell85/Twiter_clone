@@ -13,4 +13,14 @@ router.post(
         res.status(201).send(tweet);
     }
 );
+// List route
+router.get(
+    "/",
+    async (req, res) => {
+        const tweet = await Tweet.find()
+        res.send(tweet);
+    }
+);
+
+
 module.exports = router

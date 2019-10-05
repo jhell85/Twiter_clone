@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useGlobal } from "reactn";
 import client from "../api/client";
 import TweetForm from "../components/TweetForm";
+import TweetList from "../components/TweetList"
 
 
 
@@ -29,6 +30,9 @@ const Profile = () => {
       )}
       <h3>Write a Tweet</h3>
       <TweetForm/>
+      <h3>Your Tweets</h3>
+      <TweetList/>
+      
     </div>
 
       
