@@ -2,6 +2,7 @@ import React, { useState, useGlobal } from "reactn";
 import { Redirect } from "react-router-dom";
 import client from "../api/client";
 
+
 const SignupForm = (props) => {
   const intiialState = {
     email: "",

@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 const AuthController = require("./controllers/auth.controller");
+const TweetController = require("./controllers/tweet.routes");
 
 const app = express();
 app.use(cors());
@@ -11,6 +12,7 @@ app.use(morgan("tiny"));
 app.use(express.json());
 
 app.use("/auth", AuthController);
+app.use("/tweet", TweetController)
 
 const connectDatabase = async (databaseName="Twiter_Clone", hostname="localhost") => {
   const database = await mongoose.connect(

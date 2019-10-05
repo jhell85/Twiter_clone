@@ -21,7 +21,7 @@ const TweetForm = (props) => {
     return(
     <div>
         <form onSubmit={handleSubmit} className="Form">
-            <textarea name="message" rows="10" cols="30"></textarea>
+            <textarea name="body" rows="10" cols="30" onChange={handleChange}></textarea>
             <button>add Tweet</button>
         </form>
     </div>
