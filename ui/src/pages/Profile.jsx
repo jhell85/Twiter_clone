@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useGlobal } from "reactn";
 import client from "../api/client";
+import TweetForm from "../components/TweetForm";
+
+
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -15,7 +18,6 @@ const Profile = () => {
 
       setProfile(data);
     }
-
     getProfile();
   }, [token]);
 
@@ -25,7 +27,11 @@ const Profile = () => {
       {profile && (
         <em>{profile.email}</em>
       )}
+      <h3>Write a Tweet</h3>
+      <TweetForm/>
     </div>
+
+      
   )
 }
 

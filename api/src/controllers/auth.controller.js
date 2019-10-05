@@ -24,7 +24,7 @@ router.post(
   [...signUpValidators, handleValidationErrors], 
   async (req, res) => {
     const userExists = await User.findOne({email: req.body.email});
-
+    console.log('I ran')
     if(userExists)
       return res.status(400).send("E-mail already exists");
     if(req.body.password !== req.body.passwordConfirm)
