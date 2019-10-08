@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
+const { ObjectId } = mongoose.Schema.Types;
 
 const tweetSchema = Schema({
     body:{
@@ -8,6 +9,10 @@ const tweetSchema = Schema({
         required: true,
     },
     comments:[],
+    user: {
+        type: ObjectId,
+        ref: "User"
+    }
 }, {
     timestamps: true,
     toJSON: {

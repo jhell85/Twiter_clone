@@ -52,7 +52,7 @@ router.post(
 );
 
 router.get("/profile", [jwtMiddleware], async (req, res) => {
-  const user = await User.findOne({_id: req.user._id});
+  const user = await User.findOne({_id: req.user._id}).populate('tweets');
 
   res.send(user);
 });
